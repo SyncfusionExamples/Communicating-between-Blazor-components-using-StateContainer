@@ -1,0 +1,39 @@
+﻿@inherits LayoutComponentBase
+@inject SessionGlobals sessionGlobals;
+@implements IDisposable
+
+<PageTitle>BlazorApp1</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>    
+    <main>
+        <div class="top-row px-4">
+            <SfTextBox Value="@sessionGlobals.MainMessage"  ></SfTextBox>            
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+             <CascadingValue Value="@sessionGlobals">
+              @Body
+            </CascadingValue>
+        </article>
+    </main>
+</div>
+
+
+@code
+{
+
+    protected override void OnInitialized()
+    {
+        sessionGlobals.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        sessionGlobals.OnChange -= StateHasChanged;
+    }
+
+}
