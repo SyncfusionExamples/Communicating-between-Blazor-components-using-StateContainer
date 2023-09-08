@@ -1,6 +1,8 @@
-@page "/fetchdata"
-@using BlazorApp1.Data
+﻿@page "/fetchdata"
+@using BlazorComponentUsingStateContainer.Data
 @inject WeatherForecastService ForecastService
+
+<PageTitle>Weather forecast</PageTitle>
 
 <h1>Weather forecast</h1>
 
@@ -36,7 +38,10 @@ else
 }
 
 @code {
-    WeatherForecast[] forecasts;
+    private WeatherForecast[]? forecasts;
 
-    
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
+    }
 }
