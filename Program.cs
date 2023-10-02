@@ -1,16 +1,18 @@
-using BlazorApp1.Data;
+using BlazorComponentUsingStateContainer.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSyncfusionBlazor();
 builder.Services.AddScoped<SessionGlobals>();
+builder.Services.AddSingleton<WeatherForecastService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

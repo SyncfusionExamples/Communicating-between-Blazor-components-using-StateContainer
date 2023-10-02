@@ -1,2 +1,14 @@
-# Communicating-between-Blazor-components-using-StateContainer
-How to communicate between Blazor components using StateContainer.
+# Communicating between-Blazor Components using StateContainer
+
+This sample explains about how to communicate between Blazor components using StateContainer.
+
+## Prerequisites
+
+* Visual Studio 2022
+
+## How to run the project
+
+* Checkout this project to a location in your disk.
+* Open the solution file using the Visual Studio 2022.
+* Restore the NuGet packages by rebuilding the solution.
+* Run the project.

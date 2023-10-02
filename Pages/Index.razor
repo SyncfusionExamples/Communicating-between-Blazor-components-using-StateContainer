@@ -10,7 +10,7 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
-<SfTextBox Value="@sessionGlobals.MainMessage"  ></SfTextBox>
+<SfTextBox Value="@sessionGlobals.MainMessage"></SfTextBox>
 
 <SfButton @ref="ToggleBtn" @onclick="onToggleClick" CssClass="e-flat" IsToggle="true" IsPrimary="true" Content="@Content"></SfButton>
 
@@ -24,14 +24,14 @@ Welcome to your new app.
         if (ToggleBtn?.Content == "Play")
         {
             this.Content = "Pause";
-            sessionGlobals.SetMessage("Now hit Pause");            
+            sessionGlobals.SetMessage("Now hit Pause");
             //StateHasChanged();
         }
         else
         {
             this.Content = "Play";
-            sessionGlobals.SetMessage("Now hit Play");            
-           //StateHasChanged();
+            sessionGlobals.SetMessage("Now hit Play");
+            //StateHasChanged();
         }
     }
 
